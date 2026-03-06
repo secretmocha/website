@@ -7,22 +7,28 @@ img { width: 100%; height: auto; display: block; object-fit: cover; }
 nav { padding: 20px 5vw; display: flex; gap: 20px; }
 nav a { text-decoration: none; color: inherit; font-weight: bold; }
 
-/* Page Specific Backgrounds */
-.home-page { background-color: #f5f5dc; color: #333; } /* Cream/Beige */
-.gallery-page { background-color: #1a1a1a; color: #f5f5dc; } /* Dark */
+/* Page Backgrounds */
+.home-page { background-color: #f5f5dc; color: #333; }
+.gallery-page { background-color: #1a1a1a; color: #f5f5dc; }
 
-/* Main Page Layout */
+/* Home Layout */
 .large-name { font-size: clamp(3rem, 10vw, 6rem); line-height: 0.9; margin-bottom: 2rem; }
 .main-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
 
-/* Gallery Page Layout */
+/* Gallery Layout */
 .featured-row { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 50px; align-items: center; }
-.gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+
+/* Updated for 2x2 Grid */
+.gallery-grid { 
+    display: grid; 
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 20px; 
+}
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .main-grid, .featured-row, .gallery-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Stacks everything on mobile */
     }
     .large-name { font-size: 4rem; }
 }
