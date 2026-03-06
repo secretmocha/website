@@ -1,7 +1,7 @@
 /* General Styles */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; line-height: 1.6; }
-.container { padding: 5vw; max-width: 1400px; margin: 0 auto; }
+.container { padding: 5vw; max-width: 1400px; margin: 0 auto; min-height: 90vh; }
 img { width: 100%; height: auto; display: block; object-fit: cover; }
 
 nav { padding: 20px 5vw; display: flex; gap: 20px; }
@@ -11,24 +11,46 @@ nav a { text-decoration: none; color: inherit; font-weight: bold; }
 .home-page { background-color: #f5f5dc; color: #333; }
 .gallery-page { background-color: #1a1a1a; color: #f5f5dc; }
 
-/* Home Layout */
-.large-name { font-size: clamp(3rem, 10vw, 6rem); line-height: 0.9; margin-bottom: 2rem; }
-.main-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
-
-/* Gallery Layout */
-.featured-row { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 50px; align-items: center; }
-
-/* Updated for 2x2 Grid */
-.gallery-grid { 
+/* --- Updated Home Layout --- */
+.main-grid { 
     display: grid; 
-    grid-template-columns: repeat(2, 1fr); 
-    gap: 20px; 
+    grid-template-columns: 1fr 1fr; 
+    gap: 40px; 
+    align-items: center; /* Centers the text and image vertically relative to each other */
 }
+
+.text-content {
+    /* Shifts text to the right and adds space at the top to push it "lower" */
+    padding-left: 15%; 
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.large-name { 
+    font-size: clamp(3rem, 8vw, 6rem); 
+    line-height: 0.9; 
+    margin-bottom: 2.5rem; 
+}
+
+.bio, .portfolio-list {
+    max-width: 400px; /* Keeps the text from stretching too wide for easier reading */
+    margin-bottom: 2rem;
+}
+
+/* --- Gallery Layout --- */
+.featured-row { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 50px; align-items: center; }
+.gallery-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .main-grid, .featured-row, .gallery-grid {
-        grid-template-columns: 1fr; /* Stacks everything on mobile */
+        grid-template-columns: 1fr;
+    }
+    .text-content {
+        padding-left: 0; /* Resets the "right shift" on mobile so text doesn't look cut off */
+        padding-top: 20px;
     }
     .large-name { font-size: 4rem; }
 }
