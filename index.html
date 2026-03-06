@@ -1,18 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My Art Portfolio</title>
-    <style>
-        body { font-family: sans-serif; max-width: 800px; margin: auto; padding: 20px; }
-        img { width: 100%; height: auto; margin-bottom: 20px; }
-        .gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yihua Zhang</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <h1>Artist Name</h1>
-    <p>Your biography goes here...</p>
-    <div class="gallery">
-        <img src="art1.jpg" alt="Description of artwork">
-    </div>
+<body class="home-page">
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="gallery.html">Gallery</a>
+    </nav>
+
+    <main class="container main-grid">
+        <section class="text-content">
+            <h1 class="large-name">Yihua Zhang</h1>
+            <div class="bio">
+                <h3>Biography</h3>
+                <p>Insert your artist biography text here. This section will flow naturally under your name on mobile or stay on the left side on desktop.</p>
+            </div>
+            <div class="portfolio-list">
+                <h3>Past Portfolio</h3>
+                <p>Details about your previous work and exhibitions go here.</p>
+            </div>
+        </section>
+
+        <section class="image-content">
+            <img src="Homeland7.jpg" alt="Homeland 7" class="hero-img">
+        </section>
+    </main>
 </body>
 </html>
