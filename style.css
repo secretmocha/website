@@ -1,0 +1,28 @@
+/* General Styles */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; line-height: 1.6; }
+.container { padding: 5vw; max-width: 1400px; margin: 0 auto; }
+img { width: 100%; height: auto; display: block; object-fit: cover; }
+
+nav { padding: 20px 5vw; display: flex; gap: 20px; }
+nav a { text-decoration: none; color: inherit; font-weight: bold; }
+
+/* Page Specific Backgrounds */
+.home-page { background-color: #f5f5dc; color: #333; } /* Cream/Beige */
+.gallery-page { background-color: #1a1a1a; color: #f5f5dc; } /* Dark */
+
+/* Main Page Layout */
+.large-name { font-size: clamp(3rem, 10vw, 6rem); line-height: 0.9; margin-bottom: 2rem; }
+.main-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+
+/* Gallery Page Layout */
+.featured-row { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 50px; align-items: center; }
+.gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .main-grid, .featured-row, .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+    .large-name { font-size: 4rem; }
+}
